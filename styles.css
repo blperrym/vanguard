@@ -1,161 +1,684 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Brandon Perryman */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS" */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-    line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-    list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-    quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* ROOT VARIABLES */
 :root {
-    --blue: #007BFF;
-    --red: #FF4500;
-    --white: #EAEAEA;
-    --black: #000000;
-    --charcoal: #333333;
-    --font: "Inter", sans-serif;
+  --blue: #007bff;
+  --red: #ff4500;
+  --white: #eaeaea;
+  --black: #000000;
+  --charcoal: #333333;
+  --font: "Inter", sans-serif;
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+body {
+  min-width: 400px;
+  font-family: var(--font);
+  background: var(--black);
+  line-height: 1.6;
+  font-size: 1rem;
+  align-items: center;
+  background-color: var(--blue);
+}
+
+header {
+  display: flex;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--black);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--black);
+  justify-content: space-between;
+}
+
+h1 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--blue);
+  padding-top: 0.5rem;
+}
+
+nav {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  position: relative;
+  right: 0rem;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+nav h2 {
+  visibility: hidden;
+  height: 1px;
+}
+
+nav ul {
+  width: 100%;
+  margin:0;
+  padding:0;
+  list-style:none;
+  overflow:hidden;
+  text-align:center;
+  max-height: 0;
+}
+
+nav input {
+  display: none;
+}
+
+nav li a {
+  display: block;
+  font-family: var(--font);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--blue);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background-color: var(--blue);
+  color: var(--black);
+}
+
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+/* BUILDS THE MIDDLE LILNE OF THE HAMBURGER */
+label span {
+    background-color: white;
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+/* BUILDS THE TOP AND BOTTOM LINES OF THE HAMBURGER*/
+label span:before, label span:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+/* ADDS HEIGHT THE NAV WHEN IT'S DROPPED DOWN */
+input:checked ~ ul {
+    max-height: 500px;
+}
+/* MAKES THE MIDDLE LINE OF THE HAMBURGER DISAPPEAR */
+input:checked ~ label span {
+    background: transparent;
+}
+/* ROTATES THE TOP LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+/* ROTATES THE BOTTOM LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+/* LOCATION OF THE HAMBURGER */
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+.consultation-button {
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: bold;
+}
+
+.consultation-button:hover {
+  background-color: var(--red);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in;
+}
+
+h2 {
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+h3 {
+  font-family: var(--font);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.results-table h3, .bar-chart h3 {
+  padding-left: 0.5rem;
+  font-size: 1.25rem;
+  font-family: var(--font);
+  font-weight: 700;
+}
+
+.results-table table {
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  overflow: hidden;
+  font-size: 0.95rem;
+  border-left: 1px solid var(--charcoal);
+  border-right: 1px solid var(--charcoal);
+}
+
+.results-table th {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid var(--charcoal);
+  border-left: 1px solid var(--charcoal);
+  border-right: 1px solid var(--charcoal);
+}
+
+.results-table td {
+  text-align: center;
+  padding: 0.75rem;
+  border-left: 1px solid var(--charcoal);
+  border-right: 1px solid var(--charcoal);
+}
+
+.results-table tr:nth-child(even) {
+  background: #121212;
+}
+
+.results-table tr:nth-child(odd) {
+  background: #1a1a1a;
+}
+#results-header {
+  padding: 1rem 0.5rem;
+  display: inline;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+#results-header h2 {
+  color: var(--white);
+}
+#results-header p {
+  color: var(--white);
+}
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 1rem;
-    overflow: hidden;
+#innovation-and-investment {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+  url("images/vanguard-hero.jpg") no-repeat center center/cover;
+  height: 80vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  overflow: hidden;
+  align-items: center;
 }
 
+
+
+#innovation-and-investment h2,
+p {
+  color: var(--white);
+}
+
+#innovation-and-investment p {
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--white);
+  margin: 1rem 1rem;
+}
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+h1::before {
+  content: "";
+  display: flex;
+  margin-right: 1rem;
+  align-items: center;
+  top: -1rem;
+  left: -0.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  background: url("images/vanguard-logo.svg") no-repeat center/contain;
 }
+
+#our-expertise {
+  padding-top: 0.5rem;
+  background: var(--white);
+}
+#our-expertise p,
+h2 {
+  color: var(--black);
+}
+#what-we-offer {
+  padding: 2rem 1rem;
+  background: var(--white);
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: flex-end;
-    justify-content: space-around;
-    gap: 1rem;
-    height: 300px;
-    width: 100%;
-    max-width: 800px;
-    padding: 1rem;
-    position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 1rem;
+  height: 300px;
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  position: relative;
 }
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
-    width: 50px;
-    background: var(--charcoal);
-    border-radius: 10px;
-    position: relative;
-    transition: ;
-    height: 0;
+  width: 50px;
+  background: var(--charcoal);
+  border-radius: 10px;
+  position: relative;
+  transition: height 1s ease-in-out;
+  height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
-    content: attr(data-year);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--white);
+  content: attr(data-year);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white);
 }
 @keyframes stepUp {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: var(--height);
-    }
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--height);
+  }
 }
 /* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
 .bar {
-    animation: stepUp 1s ease-in-out forwards;
+  animation-name: stepUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.service-item {
+  background: var(--blue);
+  color: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.service-item:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.service-item h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+#contact-us {
+  margin-top: 0.5rem;
+  background: #000;
+  padding: 3rem 0;
+  color: var(--white);
+  text-align: left;
+}
+
+#contact-us h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+#contact-us p {
+  color: var(--white);
+  margin-bottom: 1.5rem;
 }
 
 
-/* MEDIA QUERIES (MEDIUM) */ 
 
-    #results {
-        grid-template-columns: 1fr 1fr;
-    }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
-    }
+.contact-form label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem 1rem;
+  background-color: var(--white);
+  border: 2px solid var(--blue);
+  color: var(--black);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: green;
+  
+}
+
+.contact-form input:invalid {
+  color: red;
+  
+}
+
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.35rem;  
+}
+
+
+.submit-button {
+  background-color: var(--blue);
+  color: #000;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: var(--red);
+}
+
+.footer-info {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  color: var(--white);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+
+/* MEDIA QUERIES (MEDIUM) */
+@media screen and (min-width: 800px) {
+  #results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .results-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .results-table {
+    width: 50%;
+  }
+
+  .bar-chart,
+  #bar-chart {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 2rem; 
+  }
+
+  .contact-form textarea {
+    grid-column: 1 / -1;
+  }
+
+  .submit-button {
+    width: 100%;
+    grid-column: 1 / -1;
+    padding: 1rem 0;
+    height: 3rem;
+  }
+    nav ul {
+    overflow:visible;
+    position:absolute;
+    top: 1.5rem;
+    right:.5rem;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+  }
+  nav li a {
+    transform: translateY(-1rem);
+    display:inline-block;
+}
+  label span, input {
+    display:none;
+  }
+}
 
 
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact-form {
+    gap: 1.5rem 2.5rem;
+  }
+  .submit-button {
+    width: 100%;
+    grid-column: 2 / 2;
+    padding: 1rem 0;
+    height: 3rem;
+  }
+}
