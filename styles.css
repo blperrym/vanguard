@@ -661,7 +661,7 @@ h2 {
     transform: translateY(-1rem);
     display:inline-block;
 }
-  label span, input {
+  label span, nav input {
     display:none;
   }
 }
